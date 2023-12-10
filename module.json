@@ -43,12 +43,12 @@
 			"path": "lang/fr.json"
 		}
 	],
-	"manifest": "https://github.com/zeel01/monarch/releases/latest/download/module.json",
-	"url": "https://github.com/zeel01/monarch",
-	"download": "https://github.com/zeel01/monarch/releases/latest/download/monarch.zip",
-	"readme": "https://github.com/zeel01/monarch/blob/master/readme.md",
-	"bugs": "https://github.com/zeel01/monarch/issues",
-	"changelog": "https://github.com/zeel01/monarch/releases",
+	"manifest": "https://github.com/Xandeus/monarch/releases/latest/download/module.json",
+	"url": "https://github.com/Xandeus/monarch",
+	"download": "https://github.com/Xandeus/monarch/releases/latest/download/monarch.zip",
+	"readme": "https://github.com/Xandeus/monarch/blob/master/readme.md",
+	"bugs": "https://github.com/Xandeus/monarch/issues",
+	"changelog": "https://github.com/Xandeus/monarch/releases",
 	"media": [
 		{
 			"type": "icon",
