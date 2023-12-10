@@ -1,5 +1,6 @@
 {
 	"name": "monarch",
+	"id": "{{name}}",
 	"title": "🦋 Monarch",
 	"description": "A card UI fit for royalty.",
 	"author": "zeel",
