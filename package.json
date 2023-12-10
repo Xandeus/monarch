@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zeel01/monarch.git"
+    "url": "git+https://github.com/Xandeus/monarch.git"
   },
   "author": "Josh Olsen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zeel01/monarch/issues"
+    "url": "https://github.com/Xandeus/monarch/issues"
   },
-  "homepage": "https://github.com/zeel01/monarch#readme",
+  "homepage": "https://github.com/Xandeus/monarch#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",

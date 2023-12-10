@@ -15,6 +15,7 @@ export default class MonarchSettings extends FormApplication {
 	 * @memberof MonarchSettings
 	 */
 	static get defaultOptions() {
+		console.log("Loading default options")
 		return mergeObject(super.defaultOptions, {
 			id: "monarch-settings",
 			title: game.i18n.localize("monarch.settings.title"),
