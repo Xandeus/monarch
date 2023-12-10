@@ -8,7 +8,7 @@ declare module "scripts/utils" {
         height: number;
         scale: number;
     }): Promise<void>;
-    export function removePositon(uuid: string): void;
+    export function removePosition(uuid: string): void;
     export function getImageDimensions(path: string): Promise<{
         width: number;
         height: number;
@@ -108,12 +108,14 @@ declare module "scripts/MonarchApplicationMixin" {
     export type CardBadge = import("scripts/Components").CardBadge;
     export type CardMarker = import("scripts/Components").CardMarker;
     export type AppControl = import("scripts/Components").AppControl;
+    export type stringCallback = import("scripts/Components").stringCallback;
     export type Components = {
         badges: Array<CardBadge>;
         controls: Array<CardControl>;
         markers: Array<CardMarker>;
         contextMenu: Array<CardControl>;
         appControls: Array<AppControl>;
+        cardClasses: Array<string | stringCallback>;
     };
     function MonarchApplicationMixin(Base: any): any;
 }
@@ -124,11 +126,11 @@ declare module "scripts/MonarchCardsConfig" {
         activateListeners(html: HTMLElement): void;
         _onControl(event: PointerEvent, button: HTMLAnchorElement, card: HTMLElement): void;
         _onAppControl(event: PointerEvent, button: HTMLButtonElement): void;
-        _onContextMenu(event: PointerEvent, html: HTMLElement, card: HTMLElement): void;
-        _onClickCard(event: PointerEvent, card: HTMLElement): void;
         override _cardClickAction(event: PointerEvent, app: FormApplication, card: Card): void;
-        _onHoverCard(event: PointerEvent, card: HTMLElement): void;
+        override _cardDblclickAction(event: PointerEvent, app: FormApplication, card: Card): void;
+        _cardContextmenuAction(event: PointerEvent, app: FormApplication, card: Card): void;
         override _cardHoverAction(event: PointerEvent, app: FormApplication, card: Card): void;
+        _onEventWithHook(event: PointerEvent, card: Card, hook: string, defaultAction: any): Promise<void>;
     }
 }
 declare module "scripts/MonarchDeck" {
@@ -224,7 +226,7 @@ declare module "scripts/Monarch" {
         static Markers: typeof Markers;
         static AppControls: typeof AppControls;
         static utils: typeof utils;
-        static settings: any;
+        static settings: {};
         static get settingDefinitions(): {
             showSuit: {
                 type: BooleanConstructor;
@@ -257,7 +259,9 @@ declare module "scripts/Monarch" {
             discardPile: {
                 type: StringConstructor;
                 default: string;
-                getChoices: () => any;
+                getChoices: () => {
+                    "": string;
+                };
             };
             transparentHand: {
                 type: BooleanConstructor;

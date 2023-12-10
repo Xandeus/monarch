@@ -7,7 +7,7 @@
 		},
 		"console": {
 			"log": {
-				"ready": "🦋 Monarch | Ready."
+				"ready": "🦋 Monarch Revived| Ready."
 			},
 			"error": {
 				"noControlClass": "🦋 Monarch | Error: Missing 'class' on control.",

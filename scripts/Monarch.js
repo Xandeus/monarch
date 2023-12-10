@@ -225,9 +225,20 @@ export default class Monarch {
 
 		game.socket.on(this.socketName, this._onSocketMessage.bind(this));
 
+		this.runHooks();
 		console.log(game.i18n.localize("monarch.console.log.ready"));
 	}
 
+	static runHooks() {
+		Hooks.on("getMonarchHandComponents", (monarch, components) => {
+			components.controls.push({
+				tooltip: "monarch.label.discard",
+				icon: "fas fa-trash",
+				class: "discard-card",
+				onclick: (event, card) => card.pass(game.cards.getName("Discard"))
+			});
+		});
+	}
 	/**
 	 * The name of the web socket for this module
 	 *
