@@ -134,8 +134,8 @@ const MonarchApplicationMixin = Base => class extends Base {
 	 * @memberof MonarchApplicationMixin
 	 */
 	async _calcCardDimensions(card) {
-		let width = card.data.width ?? 0;
-		let height = card.data.height ?? 0;
+		let width = card.width ?? 0;
+		let height = card.height ?? 0;
 
 		if (!width || !height) {
 			if (!card.img) width = height = this.cardHeight;

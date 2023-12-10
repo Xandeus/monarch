@@ -6,7 +6,7 @@ export default class MonarchCardsConfig extends MonarchApplicationMixin(CardsCon
 
 		// Create a mutable copy of the data for each card
 		data.cardData = data.cards.map(card => {
-			const cardData = card.data.toObject();
+			const cardData = card.toObject();
 			cardData.img = card.img;
 			cardData.backImg = card.backImg;
 			cardData.id = card.id;
